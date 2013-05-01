@@ -1,5 +1,5 @@
-Fold fusion for foldNat
------------------------
+Fold fusion for |foldNat|
+-------------------------
 
 Given |h|, |f| and |e|, we want |f'| and |e'| such that:
 
@@ -35,8 +35,8 @@ Given |h|, |f| and |e|, we want |f'| and |e'| such that:
   and, by the principle of induction, |h . (foldNat f e) = foldNat f' e'|.
 
 
-Fold fusion for foldSTree
--------------------------
+Fold fusion for |foldSTree|
+---------------------------
 
 Given |h|, |f| and |e|, we want |f'| and |e'| such that:
 
@@ -76,8 +76,8 @@ Given |h|, |f| and |e|, we want |f'| and |e'| such that:
   foldSTree f' e'|.
 
 
-Fold fusion for foldPair
-------------------------
+Fold fusion for |foldPair|
+--------------------------
 
 Given |h| and |f|, we want |f'| such that:
 

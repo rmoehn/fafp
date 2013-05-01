@@ -1,5 +1,5 @@
-Due to the associativity, the fold functions look the same. Only the traces
-are different.
+Due to the associativity of |++|, the fold functions look the same. Only the
+traces are different.
 
 > rconcat :: [[a]] -> [a]
 > rconcat = foldr (++) []
@@ -26,8 +26,8 @@ are different.
 < = foldl (++)  (([] ++ [1])  ++ [2,3])      [[4,5]]
 < = foldl (++) ((([] ++ [1])  ++ [2,3]) ++ [4,5]) []
 <
-< =            ((([] ++ [1])  ++ [2,3]) ++ [4,5]
-< =             (([1]         ++ [2,3]) ++ [4,5]
+< =             (([] ++ [1])  ++ [2,3]) ++ [4,5]
+< =              ([1]         ++ [2,3]) ++ [4,5]
 < =               [1,2,3]               ++ [4,5]
 <
 < =               [1,2,3,4,5]
