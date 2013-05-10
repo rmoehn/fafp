@@ -1,0 +1,77 @@
+Fold-Unfold fusion for |Nat|
+----------------------------
+
+We have:
+
+    h x
+  =
+    foldNat f e (unfoldNat g x)
+  = { def unfoldNat }
+    foldNat f e (case g x of
+                     Nothing -> O
+                     Just x' -> S (unfoldNat g x'))
+
+Considering the two cases separately:
+
+- Case |g x of Nothing|:
+
+    h x
+  = { continuing from above }
+    foldNat f e O
+  = { def foldNat }
+    e
+
+- Case |g x of Just x'|:
+
+    h x
+  = { continuing from above }
+    foldNat f e (S (unfoldNat g x'))
+  = { def foldNat }
+    f (foldNat f e (unfoldNat g x'))
+  = { def h }
+    f (h x')
+
+Thus |h| can be defined (with |f|, |e| and |g| from above) in this way:
+
+    h x = case g x of 
+               Nothing -> e
+               Just x' -> f (h x')
+
+
+Fold-Unfold fusion for |List|
+-----------------------------
+
+We have (using Haskell's built-in lists):
+
+    h x
+  =
+    foldList f e (unfoldList g x)
+  = { def unfoldList }
+    foldList f e (case g x of
+                      Nothing      -> []
+                      Just (a, x') -> a : (unfoldList g x'))
+    
+Considering the two cases separately:
+
+- Case |g x of Nothing|:
+
+    h x
+  = { continuing from above }
+    foldList f e []
+  = { def foldList }
+    e
+
+- Case |g x of Just (a, x')|:
+    h x
+  = { continuing from above }
+    foldList f e (a : (unfoldList g x'))
+  = { def foldList }
+    f a (foldList f e (unfoldList g x'))
+  = { def h }
+    f a (h x')
+
+Thus |h| can be defined (with |f|, |e| and |g| from above) in this way:
+
+    h x = case g x of 
+              Nothing      -> e
+              Just (a, x') -> f a (h x')
