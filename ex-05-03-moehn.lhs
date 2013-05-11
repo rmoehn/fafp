@@ -15,7 +15,7 @@ I'll prove the propositions using the latter one.
 
 Proposition:
 ------------
-Be |P3 t <=> mapSTree id t = id t|. |mapSTree id = id|, i. e. |P3| holds for
+Be |P3 t <=> mapSTree id t = id t|. |mapSTree id = id|, i. e. |P3 t| holds for
 all STrees t.
 
 Proof by structural induction on t:
@@ -51,7 +51,7 @@ Proof by structural induction on t:
 Proposition:
 ------------
 Be |P4 t <=> mapSTree (g . f) t = mapSTree g (mapSTree f t)|. |mapSTree (g .
-f) = (mapSTree g) . (mapSTree f)|, i. e. |P4| holds for all STrees |t|.
+f) = (mapSTree g) . (mapSTree f)|, i. e. |P4 t| holds for all STrees |t|.
 
 Proof by structural induction on t:
 -----------------------------------

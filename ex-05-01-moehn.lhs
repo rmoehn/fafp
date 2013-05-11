@@ -66,7 +66,7 @@ Given |h|, |g| and |f|, we want |g'| and |f'| such that:
     f' (h (foldList f g as)) a
 
     If we find a function |f'| such that |f' (h b) a = h (f b a)|, we have
-    |LHS = RHS| and by the principle of induction, |h . (foldList g f) =
+    |LHS = RHS| and, by the principle of induction, |h . (foldList g f) =
     foldList g' f'|.
 
 Fold-Unfold Fusion

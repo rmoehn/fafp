@@ -1,6 +1,6 @@
 Proposition:
 ------------
-Be |P1 l <=> map id l = id l|. |map id = id|, i. e. |P1| holds for all lists
+Be |P1 l <=> map id l = id l|. |map id = id|, i. e. |P1 l| holds for all lists
 |l|.
 
 Proof by structural induction on |l|:
@@ -36,7 +36,7 @@ Proof by structural induction on |l|:
 Proposition:
 ------------
 Be |P2 l <=> map (g . f) l = map g (map f l)|. |map (g . f) = (map g) .
-(map f)|, i. e. |P2| holds for all lists |l|.
+(map f)|, i. e. |P2 l| holds for all lists |l|.
 
 Proof by structural induction on |l|:
 -------------------------------------

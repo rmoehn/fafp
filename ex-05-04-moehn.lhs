@@ -27,7 +27,7 @@ Proof by induction on |l1|:
 = { def ++ }
   (f x) : (map f xs ++ map f l2)
 = { Hypothesis }
-  (f x) : (map f (xs ++ l2)
+  (f x) : (map f (xs ++ l2))
 = { rev def map }
   map f (x : (xs ++ l2))
 = { rev def ++ }

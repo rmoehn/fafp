@@ -12,6 +12,12 @@ Proof by structural induction on |t|:
   flatten Empty
 = { def flatten }
   []
+= { rev def map }
+  map f []
+= { rev def flatten }
+  map f (flatten Empty)
+
+=> |P7 Empty| holds.
 
 - Hypothesis: |P7 tl| and |P7 tr| hold.
 
