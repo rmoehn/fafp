@@ -3,9 +3,7 @@
     (cross (cofmap f, id) . filter') (cross (id, fmap f) (pb, as))
 = { def cross, def fmap }
     (cross (cofmap f, id) . filter') (pb, map f as)
-= { composition }
-    (cross (cofmap f, id)) (filter' (pb, map f as))
-= { def filter' }
+= { composition, def filter' }
     cross (cofmap f, id) ((), filter (pb, map f as))
 = { def cross }
     (cofmap f (), filter (pb, map f as))

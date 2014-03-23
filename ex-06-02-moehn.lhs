@@ -6,7 +6,7 @@ may put a function after it or it may do both.
 If it puts a function in front of it, this function has to be of type |a
 -> a| since the predicate produced by |beta| must still be of type |a ->
 Bool|. There is only one function of this type (unrestricted
-polymorphism), as we know, |id|, and |p . id = id|.
+polymorphism), as we know, |id|, and |p . id = p|.
 
 If it puts a function after it, this function must be of type |Bool ->
 Bool| for a similar reason as above. There are only two functions of

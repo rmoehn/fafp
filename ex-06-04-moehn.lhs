@@ -29,26 +29,25 @@ paragraphs must be equal. Thus:
     fmap f . alpha = alpha . fmap f
 <=>
     alpha . fmap f = fmap f . alpha
-    
+
 
 
     (cross (id, fmap f) . beta' . cross (cofmap f, id)) (a, b)
-=
+= { composition, def cross }
     (cross (id, fmap f) . beta')  (cofmap f a, b)
-=
-    cross (id, fmap f) (beta' (cofmap f a, b))
-=
+= { composition, def beta'
     cross (id, fmap f) (beta (cofmap f a), b)
-= 
+= { def cross }
     (beta (cofmap f a), fmap f b)
 
     (cross (cofmap f, id) . beta' . cross (id, fmap f)) (a, b)
-=
+= { composition, def cross }
     (cross (cofmap f, id) . beta') (a, fmap f b)
-=
+= { cofmap, def beta' }
     cross (cofmap f, id) (beta a, fmap f b)
-=
+= { def cross }
     (cofmap f (beta a), fmap f b)
 
 ==> beta (cofmap f a) = cofmap f (beta a)
-<=> beta . cofmap f = cofmap f . beta
+<=>
+    beta . cofmap f = cofmap f . beta

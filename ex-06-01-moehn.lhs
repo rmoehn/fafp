@@ -20,7 +20,7 @@ So we have because of parametricity and |F|'s covariance:
 
 Let |X| be an arbitrary type and |z| an arbitrary element of that type
 and assume:
-    
+
     f () = z
 
 Then assume for the above equation that |a| is the singleton type:
@@ -44,5 +44,6 @@ Therefore these are the possible functions |alpha| of type |(a, a) ->
 
     alpha (x, y) = (y, y)
 
-(It remains to be shown that |alpha| cannot apply any other
-transformations to its arguments than those shown, I think.)
+However, I think this is not fully conclusive. Doesn't the condition |alpha
+(z, z) = (z, z)| permit |alpha| to transform its arguments if they're not
+identical?
